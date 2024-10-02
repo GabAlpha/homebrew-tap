@@ -1,5 +1,4 @@
-
-class basilk < Formula
+class Basilk < Formula
     desc "A Terminal User Interface (TUI) to manage your tasks with minimal kanban logic"
     homepage "https://github.com/GabAlpha/basilk"
     url "https://github.com/GabAlpha/basilk/archive/refs/tags/0.1.3.tar.gz"
