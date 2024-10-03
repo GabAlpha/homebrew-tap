@@ -1,17 +1,26 @@
 class Basilk < Formula
     desc "A Terminal User Interface (TUI) to manage your tasks with minimal kanban logic"
     homepage "https://github.com/GabAlpha/basilk"
-    url "https://github.com/GabAlpha/basilk/archive/refs/tags/0.1.3.tar.gz"
-    sha256 "a898084228f2f9edd9edfc67e11b003ca67a0b415c439c86a1d40c41733b2693"
   
-    depends_on "rust" => :build
-  
-    def install
-      system "cargo", "install", *std_cargo_args
+    on_macos do
+      on_arm do
+        url "https://github.com/GabAlpha/basilk/releases/download/0.2.0/basilk-aarch64-apple-darwin.tar.gz"
+        sha256 "407b89d613e3299298628b458c8022c234495e7c5c72e9b54e012c19cf2c9e59"
+      end
+      on_intel do
+        url "https://github.com/GabAlpha/basilk/releases/download/0.2.0/basilk-x86_64-apple-darwin.tar.gz"
+        sha256 "1149ee8d28ac9df1f0f625ddbf0e2d16e57d835811186f95faafecb6dcfbb529"
+      end
     end
-  
-    # test do
-    #   # this test runs `ghloc --version` and checks that it starts with "ghloc "
-    #   assert_match /^ghloc /, shell_output("#{bin}/ghloc --version")
-    # end
+
+    on_linux do
+      on_intel do
+        url "https://github.com/GabAlpha/basilk/releases/download/0.2.0/basilk-x86_64-unknown-linux-gnu.tar.gz"
+        sha256 "2d1518a72b861bb94de54a71c64bf2b7060e382673ea4e679a5f494eb535e3bc"
+      end
+    end
+    
+    def install
+      bin.install "basilk"
+    end
   end
