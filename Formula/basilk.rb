@@ -5,7 +5,7 @@ class Basilk < Formula
     on_macos do
       on_arm do
         url "https://github.com/GabAlpha/basilk/releases/download/0.2.0/basilk-aarch64-apple-darwin.tar.gz"
-        sha256 "407b89d613e3299298628b458c8022c234495e7c5c72e9b54e012c19cf2c9e59"
+        sha256 "b4be52ec0cd96152cc74fb364291a62db3961bf646074bf6f56bed652c940ad9"
       end
       on_intel do
         url "https://github.com/GabAlpha/basilk/releases/download/0.2.0/basilk-x86_64-apple-darwin.tar.gz"
